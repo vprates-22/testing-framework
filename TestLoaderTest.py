@@ -3,8 +3,6 @@ from TestLoader import TestLoader
 from TestStub import TestStub
 from TestSpy import TestSpy
 from TestSuite import TestSuite
-from TestResult import TestResult
-from TestRunner import TestRunner
 
 class TestLoaderTest(TestCase):
 
@@ -38,15 +36,3 @@ class TestLoaderTest(TestCase):
         loader = TestLoader()
         names = loader.get_test_case_names(Test)
         assert names == []
-
-result = TestResult()
-loader = TestLoader()
-suite = loader.make_suite(TestLoaderTest)
-suite.run(result)
-print(result.summary())
-
-loader = TestLoader()
-suite = loader.make_suite(TestLoaderTest)
-
-runner = TestRunner()
-runner.run(suite)
